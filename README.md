@@ -30,7 +30,7 @@ Combines GenAI (Claude), LLM RAG, Knowledge Graphs, and topic modeling for expla
 
 This project combines traditional NLP + modern retrieval + LLM summarization:
 
-````mermaid
+```mermaid
 flowchart TD
     UI["Streamlit UI"] --> VS["LlamaIndex + ChromaDB (Vector Store)"]
     UI --> LLM["Claude API (LLM Summary)"]
