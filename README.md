@@ -32,9 +32,9 @@ This project combines traditional NLP + modern retrieval + LLM summarization:
 
 ````mermaid
 flowchart TD
-    UI[Streamlit UI] --> VS[LlamaIndex + ChromaDB (Vector Store)]
-    UI --> LLM[Claude API (LLM summary)]
-    UI --> KG[Neo4j Knowledge Graph (ESG Facts)]
+    UI["Streamlit UI"] --> VS["LlamaIndex + ChromaDB (Vector Store)"]
+    UI --> LLM["Claude API (LLM Summary)"]
+    UI --> KG["Neo4j Knowledge Graph (ESG Facts)"]
     VS --> LLM
     KG --> LLM
 
