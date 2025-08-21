@@ -37,7 +37,7 @@ flowchart TD
     UI --> KG["Neo4j Knowledge Graph (ESG Facts)"]
     VS --> LLM
     KG --> LLM
-...
+```
 ---
 
 ## 📊 Example Use Case
