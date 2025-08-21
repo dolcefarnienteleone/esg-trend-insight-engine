@@ -39,6 +39,7 @@ flowchart TD
     KG --> LLM
 
 ---
+...
 
 ## 📊 Example Use Case
 
