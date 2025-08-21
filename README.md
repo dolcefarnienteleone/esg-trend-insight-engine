@@ -30,11 +30,13 @@ Combines GenAI (Claude), LLM RAG, Knowledge Graphs, and topic modeling for expla
 
 This project combines traditional NLP + modern retrieval + LLM summarization:
 
-[Streamlit UI]
-│
-├──► LlamaIndex Vector Store (ChromaDB)
-├──► Claude API (LLM summary)
-└──► Neo4j Knowledge Graph (KG facts)
+````mermaid
+flowchart TD
+    UI[Streamlit UI] --> VS[LlamaIndex + ChromaDB (Vector Store)]
+    UI --> LLM[Claude API (LLM summary)]
+    UI --> KG[Neo4j Knowledge Graph (ESG Facts)]
+    VS --> LLM
+    KG --> LLM
 
 ---
 
@@ -93,4 +95,17 @@ git clone https://github.com/your-username/esg-trend-insight-engine.git
 cd esg-trend-insight-engine
 pip install -r requirements.txt
 streamlit run esg_explorer_app.py
+````
+
+````md
+## 🔐 Environment Variables
+
+Create a `.env` file in the project root:
+
+```bash
+# .env
+ANTHROPIC_API_KEY=your_claude_key
+HUGGINGFACE_API_KEY=your_hf_key
+neo4j_pw=your_neo4j_password
 ```
+````
