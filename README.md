@@ -122,3 +122,30 @@ neo4j_pw=your_neo4j_password
 - `ANTHROPIC_API_KEY`
 - `HUGGINGFACE_API_KEY`
 - `neo4j_pw`
+
+⚠️ If you use Neo4j locally → switch to a hosted Neo4j instance or disable KG features for the cloud demo.
+
+👉 **Live App**: https://your-app-name.streamlit.app
+
+---
+
+## 👤 Author
+
+**Winnie Chen**
+Data Scientist · NLP · ESG Analytics
+🔗 [LinkedIn](https://www.linkedin.com/in/wanningchen)
+🌐 [Portfolio](https://dolcefarnienteleone.github.io/#)
+
+---
+
+## 🧠 Inspiration
+
+This project aims to make corporate ESG commitments more transparent, comparable, and explainable by combining:
+
+- Topic modeling & keyword trend analysis
+
+- Retrieval (LlamaIndex + ChromaDB)
+
+- Reasoning & summarization (Claude)
+
+- Structured facts (Neo4j Knowledge Graph)
