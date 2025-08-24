@@ -105,8 +105,20 @@ streamlit run esg_explorer_app.py
 Create a `.env` file in the project root:
 
 ```ini
-# .env
 ANTHROPIC_API_KEY=your_claude_key
 HUGGINGFACE_API_KEY=your_hf_key
 neo4j_pw=your_neo4j_password
 ```
+
+---
+
+## 🚀 Deploy to Streamlit Cloud (Optional)
+
+1. Push this repo to GitHub.
+2. Go to **Streamlit Cloud** → **New app** → select your repo/branch.
+3. Set **Main file** to `esg_explorer_app.py`.
+4. Add Secrets (Environment variables):
+
+- `ANTHROPIC_API_KEY`
+- `HUGGINGFACE_API_KEY`
+- `neo4j_pw`
