@@ -38,6 +38,7 @@ flowchart TD
     VS --> LLM
     KG --> LLM
 ```
+
 ---
 
 ## 📊 Example Use Case
@@ -59,6 +60,7 @@ flowchart TD
 
 ## 📂 Folder Structure
 
+```Kotlin
 esg-trend-insight-engine/
 ├── data/
 │ ├── esg*corpus_by_year.csv
@@ -74,6 +76,7 @@ esg-trend-insight-engine/
 │ └── esg_kg_query_runner.py
 ├── esg_explorer_app.py
 └── README.md
+```
 
 ---
 
@@ -95,17 +98,15 @@ git clone https://github.com/your-username/esg-trend-insight-engine.git
 cd esg-trend-insight-engine
 pip install -r requirements.txt
 streamlit run esg_explorer_app.py
-````
+```
 
-````md
 ## 🔐 Environment Variables
 
 Create a `.env` file in the project root:
 
-```bash
+```ini
 # .env
 ANTHROPIC_API_KEY=your_claude_key
 HUGGINGFACE_API_KEY=your_hf_key
 neo4j_pw=your_neo4j_password
 ```
-````
