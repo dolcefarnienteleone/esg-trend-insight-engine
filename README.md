@@ -134,15 +134,6 @@ neo4j_pw=your_neo4j_password
 **Winnie Chen**
 Data Scientist · NLP · ESG Analytics
 
-```html
-<p>
-  🔗
-  <a href="https://www.linkedin.com/in/your-handle" target="_blank">LinkedIn</a
-  ><br />
-  🌐 <a href="https://your-portfolio.site" target="_blank">Portfolio</a>
-</p>
-```
-
 🔗 [LinkedIn](https://www.linkedin.com/in/wanningchen)
 🌐 [Portfolio](https://dolcefarnienteleone.github.io/#)
 
