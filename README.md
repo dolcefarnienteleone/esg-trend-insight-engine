@@ -63,9 +63,9 @@ flowchart TD
 ```Kotlin
 esg-trend-insight-engine/
 ├── data/
-│ ├── esg*corpus_by_year.csv
-│ ├── keyword_trends_by*.csv
-│ └── lda\_.txt
+│ ├── esg_corpus_by_year.csv
+│ ├── keyword_trends_by_*.csv
+│ └── lda_*_topics.txt
 ├── scripts/
 │ ├── triple_extractor.py
 │ ├── load_structured_esg_kg.py
