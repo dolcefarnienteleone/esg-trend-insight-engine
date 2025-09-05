@@ -60,7 +60,7 @@ flowchart TD
 
 ## 🎬 Demo Video
 
-[![ESG Trend Engine Demo](https://github.com/dolcefarnienteleone/esg-trend-insight-engine/raw/main/media/esg_engine_thumbnail.jpg)](https://github.com/dolcefarnienteleone/esg-trend-insight-engine/raw/main/media/esg_trend_insight_engine.mp4)
+[![ESG Trend Engine Demo](https://github.com/dolcefarnienteleone/esg-trend-insight-engine/raw/main/media/esg_engine_thumbnail.jpg)](https://github.com/dolcefarnienteleone/esg-trend-insight-engine/raw/main/media/esg_trend_insight_engine.MP4)
 
 ---
 
