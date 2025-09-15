@@ -31,12 +31,30 @@ Combines GenAI (Claude), LLM RAG, Knowledge Graphs, and topic modeling for expla
 This project combines traditional NLP + modern retrieval + LLM summarization:
 
 ```mermaid
+
 flowchart TD
-    UI["Streamlit UI"] --> VS["LlamaIndex + ChromaDB (Vector Store)"]
-    UI --> LLM["Claude API (LLM Summary)"]
-    UI --> KG["Neo4j Knowledge Graph (ESG Facts)"]
-    VS --> LLM
-    KG --> LLM
+    subgraph UI["Streamlit Frontend"]
+        A[User interface to explore trends<br/>and ask questions]
+    end
+
+    subgraph Vector["LlamaIndex + ChromaDB"]
+        B[Semantic vector search<br/>over ESG documents]
+    end
+
+    subgraph LLM["Claude API (Anthropic)"]
+        C[LLM summarization<br/>of retrieved results]
+    end
+
+    subgraph KG["Neo4j Knowledge Graph"]
+        D[Structured ESG triples<br/>(goals, topics, timelines)]
+    end
+
+    %% Pipeline flow
+    A --> B
+    A --> D
+    B --> C
+    D --> C
+
 ```
 
 ---
