@@ -1,7 +1,8 @@
 # 🌱 ESG Trend Insight Engine
 
-**End-to-end NLP pipeline to uncover ESG insights across companies and time.**
-Combines GenAI (Claude), LLM RAG, Knowledge Graphs, and topic modeling for explainable ESG analysis.
+**An LLM-powered content understanding and retrieval system for explainable ESG insights across companies and time.**
+
+This project combines **GenAI (Claude), Retrieval-Augmented Generation (RAG), Knowledge Graphs, and topic modeling** to help users explore long-form ESG disclosures, uncover semantic patterns, and generate grounded, explainable insights.
 
 ---
 
@@ -23,6 +24,9 @@ Combines GenAI (Claude), LLM RAG, Knowledge Graphs, and topic modeling for expla
 
 - 🧠 **Topic Modeling Layer**
   Discover top ESG themes per year using LDA and BERTopic.
+
+- 📏 **Retrieval & Answer Evaluation**
+  Measure retrieval quality, grounding, and failure modes using a curated ESG QA set.
 
 ---
 
@@ -74,6 +78,54 @@ flowchart TD
 
 ---
 
+## 📏 Retrieval & Answer Evaluation
+
+To assess retrieval quality and answer reliability, I implemented an initial evaluation framework on a curated set of **104 ESG-related questions**.
+
+This was designed as a baseline evaluation layer to better understand system behaviour, retrieval failure modes, and opportunities for improvement.
+
+### Metrics
+
+- **Hit@5:** 0.279  
+- **Recall@5:** 0.341  
+- **Context Relevance:** 0.484  
+- **Groundedness:** 0.284  
+
+### Evaluation Setup
+
+- Questions are mapped to expected **company-year document families**
+- Retrieval is evaluated at the **family level** rather than individual chunks
+- Metrics capture both:
+  - **Retrieval accuracy** (Hit@K, Recall@K)
+  - **Answer quality & grounding** (Context Relevance, Groundedness)
+
+### Key Observations
+
+- The system frequently retrieves **semantically relevant documents from the correct company but different years**
+- This indicates that embedding-based retrieval captures **topic similarity** well, but struggles with **temporal specificity**
+- Retrieval outputs often include multiple chunks from the same document family, reducing effective coverage in top-K results
+
+### Insights & Next Steps
+
+This evaluation highlights a clear opportunity to improve **metadata-aware retrieval**, particularly:
+
+- **Year-aware ranking / filtering**
+- **Document-level deduplication in top-K retrieval**
+- Hybrid retrieval strategies combining **semantic similarity + structured signals** (company, year)
+
+### Why This Matters
+
+This evaluation framework establishes a foundation for:
+
+- Measuring **content understanding quality**
+- Diagnosing **retrieval failure modes** in long-form corporate reports
+- Supporting future work in:
+  - retrieval optimization
+  - explainability
+  - LLM-assisted annotation and evaluation workflows
+
+---
+
 ## 🎬 Demo Video
 
 [![ESG Trend Engine Demo](https://github.com/dolcefarnienteleone/esg-trend-insight-engine/raw/main/media/esg_engine_thumbnail.jpg)](https://github.com/dolcefarnienteleone/esg-trend-insight-engine/raw/main/media/esg_trend_insight_engine.MP4)
@@ -96,6 +148,8 @@ esg-trend-insight-engine/
 ├── retrievers/
 │ ├── hybrid_esg_retriever_claude.py
 │ └── esg_kg_query_runner.py
+├── evaluation/
+│ └── eval_retrieval_chroma.py
 ├── esg_explorer_app.py
 └── README.md
 ```
@@ -107,8 +161,9 @@ esg-trend-insight-engine/
 - **GenAI / RAG**: Claude 3 + LlamaIndex
 - **Embeddings**: HuggingFace MiniLM
 - **Vector DB**: ChromaDB
-- **KG**: Neo4j (structured ESG facts)
+- **Knowledge Graph**: Neo4j (structured ESG facts)
 - **Topic Modeling**: LDA, BERTopic
+- **Evaluation**: Retrieval metrics + grounding analysis
 - **Frontend**: Streamlit
 
 ---
@@ -154,21 +209,23 @@ neo4j_pw=your_neo4j_password
 ## 👤 Author
 
 **Winnie Chen**
-Data Scientist · NLP · ESG Analytics
+Data Scientist · Applied AI · NLP · ESG Analytics
 
 🔗 [LinkedIn](https://www.linkedin.com/in/wanningchen)
 🌐 [Portfolio](https://dolcefarnienteleone.github.io/#)
 
 ---
 
-## 🧠 Inspiration
+## 🧠 Why I Built This
 
-This project aims to make corporate ESG commitments more transparent, comparable, and explainable by combining:
+This project explores how AI can make long-form corporate disclosures more **searchable, interpretable, and explainable**.
+
+It was built to demonstrate how **semantic retrieval, structured knowledge, and evaluation frameworks** can work together to support better content understanding and grounded insight generation.
+
+Core components include:
 
 - Topic modeling & keyword trend analysis
-
 - Retrieval (LlamaIndex + ChromaDB)
-
 - Reasoning & summarization (Claude)
-
 - Structured facts (Neo4j Knowledge Graph)
+- Retrieval & grounding evaluation
